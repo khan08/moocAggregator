@@ -1,0 +1,128 @@
+body {
+  font-family:sans-serif, Arial, Verdana;
+  color: #111111;
+  padding-top:60px;
+  background-color:#ffffff;
+  margin-bottom: 80px;
+  }
+
+.navbar-custom a{
+    color:#efefef
+    background-color: #000 !important;
+}
+.navbar-custom{
+    background:#efefef;
+}
+
+.navbar-brand{
+    margin-left:50px;
+}
+[id*="course_cards"]{
+    text-align:left;
+    border-radius:0px;
+    margin-bottom:5px;
+    margin-left:0px !important;
+}
+#title{
+    height:40px;
+    overflow: hidden;
+    font-size:110%;
+}
+#subtitle{
+    font-size:60%;
+}
+.panel .panel-body{
+    margin-bottom:5px;
+    height:110px;
+
+}
+.panel-default{
+    margin:5px;
+    box-shadow: 5px 5px #e6e6e6;
+}
+.panel-default:hover{
+    background:#f2f2f2;
+
+
+}
+
+.container{
+    margin-right:auto;
+    margin-left:auto;
+    padding-left:15px;
+    padding-right:15px;
+}
+#filter{
+    width:100%;
+    height:100%;
+    margin-top:10px;
+
+}
+#custom-search-input {
+        margin-bottom:5px !important;
+        margin-top: 10px;
+        padding: 0;
+    }
+#custom-search-input .search-query {
+        padding-right: 3px;
+        padding-right: 4px \9;
+        padding-left: 3px;
+        padding-left: 4px \9;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 6px;
+    }
+
+#custom-search-input button {
+        border: 0;
+        background: none;
+        /** belows styles are working good */
+        padding: 2px 5px;
+        margin-top: 1px;
+        position: relative;
+        left: -28px;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        color:#33ccb3;
+    }
+
+    .search-query:focus + button {
+        z-index: 3;
+    }
+
+.course_image img{
+    width:80%;
+    height:100%;
+    padding:5px;
+}
+.side-bar{
+    background-color: white;
+    padding :10px;
+}
+.sidebar{
+    margin-top:22px;
+    }
+
+.list-group-item-custom{
+    font-size:13px;
+    background-color: white;
+    color : black;
+}
+
+ul li .page_number .sliced_page{
+    background-color: black !important;
+    border:0 !important;
+}
+
+
+.ui-menu .ui-menu-item{
+    padding: 3px !important;
+}
+
+
+

@@ -1,0 +1,124 @@
+
+
+{% load staticfiles  %}
+<head>
+    <title>Online Course Search</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    //<script src="{% static 'js/parallax-img.js' %}"></script>
+    <script src="{% static 'js/document_ready.js' %}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/index.css">
+    <script src="{% static 'js/ajaxSearch.js' %}"></script>
+</head>
+
+
+<body>
+<div class="container">
+    <div class="container-fluid">
+        <div class="navbar navbar-custom navbar-fixed-top">
+            <div class="row">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">MYCADEMY</a>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">Tracks</a></li>
+                            <li><a href="#">Subjects</a></li>
+                            <li><a href="#">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div id="filter" class="panel panel-default">
+                <div class="list-date list-group list-cust">
+                    <div class="list-group-item active">
+                        Date
+                    </div>
+                    <a href="#" class="list-group-item text-primary"><span class="badge">12</span>Self Paced</a>
+                    <a href="#" class="list-group-item"><span class="badge">5</span>Starts Soon</a>
+                    <a href="#" class="list-group-item"><span class="badge">4</span>Recently Started</a>
+                </div>
+                <div class="list-subject list-group list-cust">
+                    <div id="test" class="list-group-item active">
+                        Subject
+                    </div>
+                    <a href="#" class="list-group-item text-primary"><span class="badge">12</span>Computer Science</a>
+                    <a href="#" class="list-group-item"><span class="badge">5</span>Math</a>
+                    <a href="#" class="list-group-item"><span class="badge">4</span>Business</a>
+                    <a href="#" class="list-group-item"><span class="badge">2</span>Art</a>
+                </div>
+                <div class="list-provider list-group list-cust">
+                    <div class="list-group-item active">
+                        Platform
+                    </div>
+                    <a href="#" class="list-group-item text-primary"><span class="badge">12</span>Coursera</a>
+                    <a href="#" class="list-group-item"><span class="badge">5</span>Udacity</a>
+                    <a href="#" class="list-group-item"><span class="badge">4</span>Edx</a>
+                    <a href="#" class="list-group-item"><span class="badge">2</span>Khan Academy</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <form class="form" id="search-form" action="" method="post">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-6">
+                        <input id="search_input" type="text" name="search_str" class="search-query form-control"
+                               placeholder="Search Course..."/>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger" id="search_btn" type="submit">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                    </div>
+                </div>
+            </form>
+
+
+
+
+
+            <!-- <script src = '/static/ajaxSearch.js'></script>-->
+
+            {% for course in courses %}
+            <form class="courses" action="{{course.url}}">
+                <button id="course_cards_{{forloop.counter0}}" class="col-md-10 panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-md-4 course_image">
+                            <img src="{{course.photo_url}}">
+                        </div>
+                        <div class="col-md-8">
+                            <p><a id="title_{{forloop.counter0}}" href="{% url 'MOOCsite:detail' course.id%}">{{course.course_name }} </a></p>
+                            <!--{% if course.time_set.first.isSelf %}
+                             self paced
+                            {% else %}
+                          {{course.time_set.first.startDate}}
+                           {%endif%}-->
+                            <a id="subtitle_school_{{forloop.counter}}" href="">{{course.school.school_name}} </a><i
+                                class="subtitle"> via </i>
+                            <a class="subtitle_provider_{{forloop.counter}}"
+                               href="">{{course.provider.provider_name}}</a>
+                        </div>
+
+                    </div>
+                </button>
+            </form>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>

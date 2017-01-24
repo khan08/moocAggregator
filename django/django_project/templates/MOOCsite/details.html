@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<p>
+{% for course in courses %}
+<h4>
+{{ course.descriptions }}
+</h4>
+</p>
+<p>
+  {{ course.school.school_name }} via {{ course.provider.provider_name }}
+{% endfor %}
+</p>
+
+
+</body>
+</html>

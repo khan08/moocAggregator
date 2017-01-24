@@ -1,0 +1,22 @@
+<ul class="pagination nav navbar-nav">
+    {% if courses.has_previous %}
+        <li><a id=0 class="btn btn-secondary page_number"> < </a></li>
+    {% endif %}
+    {% for page in courses.page_range %}
+        <li>
+            {% if courses.number == page  %}
+                <a class="btn page_number" id=3>{{page}}</a>
+            {% else %}
+                {% if page  %}
+                    <p class="btn page_number" id=1>{{page}}</p>
+                {% else %}
+                    <p class="sliced_page">   . . .   </p>
+                {% endif %}
+            {% endif %}
+        </li>
+    {% endfor %}
+    {% if courses.has_next %}
+        <li> <a id=2
+                class="btn btn-default page_number" > > </a></li>
+    {% endif %}
+</ul>

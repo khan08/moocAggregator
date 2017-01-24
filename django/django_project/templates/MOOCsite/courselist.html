@@ -1,0 +1,13 @@
+<div id="courselist">
+    <div hidden><input type='text' id='pagination-id' value="{{page}}"></div>
+        <div class="row">
+            {% for course in courses %}
+                {% include "MOOCsite/course.html" %}
+            {% endfor %}
+        </div>
+
+<div class="row">
+    {% include "MOOCsite/page_number.html" %}
+</div>
+
+</div>

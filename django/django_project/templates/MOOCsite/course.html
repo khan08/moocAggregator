@@ -1,0 +1,22 @@
+<form class="courses" action="{{course.url}}">
+    <button id="course_cards_{{forloop.counter0}}" class="col-md-10 panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-4 course_image">
+                <img src="{{course.photo_url}}">
+            </div>
+            <div class="col-md-8">
+                <p>{{course.course_name}}</p>
+                <!--{% if course.time_set.first.isSelf %}
+                 self paced
+                {% else %}
+              {{course.time_set.first.startDate}}
+               {%endif%}-->
+                <i id="subtitle_school_{{forloop.counter0}}">{{course.school.school_name}} </i>
+                <i> via </i>
+                <i class="subtitle_provider_{{forloop.counter0}}">{{course.provider.provider_name}}</i>
+            </div>
+
+        </div>
+    </button>
+</form>
+
